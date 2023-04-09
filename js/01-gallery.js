@@ -41,4 +41,13 @@ function onGalleryClick(evt) {
   `);
 
   instance.show();
+
+  window.addEventListener("keydown", onEscapeKeydown);
+
+  function onEscapeKeydown(evt) {
+    if (evt.code === "Escape") {
+      instance.close();
+      window.removeEventListener("keydown", onEscapePress);
+    }
+  }
 }
